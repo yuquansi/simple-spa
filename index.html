@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple SPA</title>
+    <style>
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="home" class="page active">
+        <h1>首页</h1>
+        <a href="#" onclick="navigate('about')">关于</a>
+    </div>
+
+    <div id="about" class="page">
+        <h1>关于页面</h1>
+        <a href="#" onclick="navigate('home')">返回首页</a>
+    </div>
+
+    <script>
+        function navigate(pageId) {
+            document.querySelector('.active').classList.remove('active');
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
